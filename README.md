@@ -1,4 +1,4 @@
-# 42Soul
+# My 42 Soul
 
 ## 42 Projects Repository of **Seoyoo**
 
@@ -9,7 +9,6 @@
 The projects uploaded here are in the process of being refactored, meaning all the code will be rewritten. Consequently, the Norminette rules may not be strictly adhered to, and there might be slight deviations from the original subject requirements.
 
 ### Project list
-
 1. Libft
 2. ft_printf
 3. get_next_line
