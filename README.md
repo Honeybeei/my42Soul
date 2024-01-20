@@ -11,15 +11,15 @@ The projects uploaded here are in the process of being refactored, meaning all t
 ### Project list
 | Project Name      | Circle  | Current Status |
 |-------------------|---------|----------------|
-| Libft             | 0       |- [ ]           |
-| ft_printf         | 1       |- [ ]           |
-| get_next_line     | 1       |- [ ]           |
-| FdF               | 2       |- [ ]           |
-| pipex             | 2       |- [ ]           |
-| Philosophers      | 2       |- [ ]           |
-| minishell         | 3       |- [ ]           |
-| miniRT            | 4       |- [ ]           |
-| cpp modules       | 4, 5    |- [ ]           |
-| ft_irc            | 5       |- [ ]           |
-| webserv           | 5       |- [ ]           |
-| ft_transcendence  | 6       |- [ ]           |
+| Libft             | 0       |- [ ]|
+| ft_printf         | 1       |- [ ]|
+| get_next_line     | 1       |- [ ]|
+| FdF               | 2       |- [ ]|
+| pipex             | 2       |- [ ]|
+| Philosophers      | 2       |- [ ]|
+| minishell         | 3       |- [ ]|
+| miniRT            | 4       |- [ ]|
+| cpp modules       | 4, 5    |- [ ]|
+| ft_irc            | 5       |- [ ]|
+| webserv           | 5       |- [ ]|
+| ft_transcendence  | 6       |- [ ]|
