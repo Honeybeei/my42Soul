@@ -6,23 +6,22 @@
 /*   By: seoyoo <seoyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:49:57 by seoyoo            #+#    #+#             */
-/*   Updated: 2024/01/20 20:00:16 by seoyoo           ###   ########.fr       */
+/*   Updated: 2024/01/24 16:37:40 by seoyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdbool.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-}	t_list;
+typedef struct s_list {
+  void *content;
+  struct s_list *next;
+} t_list;
 
 // part 1
 int ft_isalpha(int c);

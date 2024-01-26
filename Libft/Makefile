@@ -6,7 +6,7 @@
 #    By: seoyoo <seoyoo@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/20 18:38:25 by seoyoo            #+#    #+#              #
-#    Updated: 2024/01/20 20:07:23 by seoyoo           ###   ########.fr        #
+#    Updated: 2024/01/25 13:57:07 by seoyoo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,24 +31,30 @@ endef
 
 # **************************************************************************** #
 
-# variables
-NAME = libft.a
+# variables for directorie convention
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = inc
+
+# variables for libft
+NAME = libft.a
 SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 INC = $(wildcard $(INC_DIR)/*.h)
-TEST_DIR = test
-TEST_SRC = $(wildcard $(TEST_DIR)/*.c)
-TEST_OBJ = $(TEST_SRC:.c=.o)
-TEST_INC = $(wildcard $(TEST_DIR)/*.h)
-TEST_NAME = test
 
+# etc
 CC = gcc
+CXX = g++
 W_FLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rc
+
+# for test
+TEST_DIR = test
+TEST_SRC = $(wildcard $(TEST_DIR)/*.cpp)
+TEST_OBJ = $(addprefix $(TEST_DIR)/, $(notdir $(TEST_SRC:.cpp=.o)))
+TEST_INC = $(wildcard $(TEST_DIR)/*.hpp)
+TEST_NAME = test
 
 # **************************************************************************** #
 
@@ -78,5 +84,16 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+test: re $(TEST_NAME)
+
+$(TEST_DIR)/%.o: $(TEST_DIR)/%.cpp $(TEST_INC)
+	@$(call print, "Compiling $<", $(Blue))
+	@$(CXX) $(W_FLAGS) -I $(INC_DIR) -c $< -o $@
+
+$(TEST_NAME): $(TEST_OBJ) $(NAME)
+	@$(call print, "Creating test executable", $(Blue))
+	@$(CXX) $(W_FLAGS) -o $@ $(TEST_OBJ) $(NAME)
+	@$(call print, "Test executable created", $(Green))
 
 .PHONY: all clean fclean re test
